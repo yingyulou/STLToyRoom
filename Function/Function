@@ -1,0 +1,14 @@
+/*
+DESCRIPTION
+
+    Function
+
+    The STL std::function implementation. For learning only.
+
+VERSION
+
+    1.0.0
+
+*/
+
+#include "src/Function.hpp"

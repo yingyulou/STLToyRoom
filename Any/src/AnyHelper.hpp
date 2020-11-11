@@ -1,0 +1,37 @@
+/*
+    AnyHelper.hpp
+    =============
+        Class __AnyHelper implementation.
+*/
+
+#ifndef __ANY_ANY_HELPER_HPP
+#define __ANY_ANY_HELPER_HPP
+
+#include "AnyHelper.h"
+
+namespace Any_
+{
+
+////////////////////////////////////////////////////////////////////////////////
+// Constructor
+////////////////////////////////////////////////////////////////////////////////
+
+template <typename T>
+__AnyHelper<T>::__AnyHelper(const T &val): __val(val) {}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Copy
+////////////////////////////////////////////////////////////////////////////////
+
+template <typename T>
+__AnyHelper<T> *__AnyHelper<T>::__Copy() const
+{
+    return new __AnyHelper(__val);
+}
+
+
+}  // End namespace Any_
+
+
+#endif  // __ANY_ANY_HELPER_HPP

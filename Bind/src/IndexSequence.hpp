@@ -1,0 +1,60 @@
+/*
+    IndexSequence.hpp
+    =================
+        Class __IndexSequence implementation.
+*/
+
+#ifndef __BIND_INDEX_SEQUENCE_HPP
+#define __BIND_INDEX_SEQUENCE_HPP
+
+#include <cstdlib>
+
+namespace Bind_
+{
+
+////////////////////////////////////////////////////////////////////////////////
+// Class __IndexSequence
+////////////////////////////////////////////////////////////////////////////////
+
+template <size_t... Ints>
+struct __IndexSequence {};
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Class __MakeIntegerSequenceHelper
+////////////////////////////////////////////////////////////////////////////////
+
+template <size_t N, size_t... Ints>
+struct __MakeIndexSequenceHelper
+{
+    typedef typename __MakeIndexSequenceHelper<N - 1, N - 1, Ints...>::__Type __Type;
+};
+
+
+template <size_t... Ints>
+struct __MakeIndexSequenceHelper<0, Ints...>
+{
+    typedef __IndexSequence<Ints...> __Type;
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Class __MakeIndexSequence
+////////////////////////////////////////////////////////////////////////////////
+
+template <size_t N>
+using __MakeIndexSequence = typename __MakeIndexSequenceHelper<N>::__Type;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Class __IndexSequenceFor
+////////////////////////////////////////////////////////////////////////////////
+
+template <typename... Types>
+using __IndexSequenceFor = __MakeIndexSequence<sizeof...(Types)>;
+
+
+}  // End namespace Bind_
+
+
+#endif  // __BIND_INDEX_SEQUENCE_HPP
