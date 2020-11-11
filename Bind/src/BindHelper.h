@@ -28,6 +28,15 @@ using std::tuple;
 template <typename F, typename... FormalParameterTypes>
 class __BindHelper
 {
+public:
+
+    // Constructor
+    __BindHelper(F bindFunction, const FormalParameterTypes &... formalParameters);
+
+
+    // operator()
+    template <typename... ActualParameterTypes>
+    auto operator()(const ActualParameterTypes &... actualParameters);
 
 
 private:
@@ -42,18 +51,6 @@ private:
     // Call Helper
     template <size_t... Ints, typename... ActualParameterTypes>
     auto __callHelper(__IndexSequence<Ints...>, const ActualParameterTypes &... actualParameters);
-
-
-public:
-
-    // Constructor
-    __BindHelper(F bindFunction, const FormalParameterTypes &... formalParameters);
-
-
-    // operator()
-    template <typename... ActualParameterTypes>
-    auto operator()(const ActualParameterTypes &... actualParameters);
-
 };
 
 
