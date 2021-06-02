@@ -4,8 +4,7 @@
         Fraction relationships operator define.
 */
 
-#ifndef __FRACTION_RELATIONSHIP_H
-#define __FRACTION_RELATIONSHIP_H
+#pragma once
 
 #include "Fraction.h"
 #include "CommonPoints.h"
@@ -92,6 +91,3 @@ struct FractionGreaterEqual
 
 
 }  // End namespace Fraction_
-
-
-#endif  // __FRACTION_RELATIONSHIP_H

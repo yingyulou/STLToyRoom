@@ -4,8 +4,7 @@
         CLass Tuple implementation.
 */
 
-#ifndef __TUPLE_TUPLE_HPP
-#define __TUPLE_TUPLE_HPP
+#pragma once
 
 #include "Tuple.h"
 
@@ -50,6 +49,3 @@ Tuple<T1, Types...>::Tuple(const T1 &first, const Types &... Args):
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_TUPLE_HPP

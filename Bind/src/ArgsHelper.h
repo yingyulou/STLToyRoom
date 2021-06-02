@@ -4,8 +4,7 @@
         Class __ArgsHelper header.
 */
 
-#ifndef __BIND_ARGS_HELPER_H
-#define __BIND_ARGS_HELPER_H
+#pragma once
 
 #include <tuple>
 #include "EnableIf.hpp"
@@ -108,6 +107,3 @@ private:
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_ARGS_HELPER_H

@@ -4,8 +4,7 @@
         Placeholders implementation.
 */
 
-#ifndef __BIND_PLACEHOLDERS_HPP
-#define __BIND_PLACEHOLDERS_HPP
+#pragma once
 
 #include <cstddef>
 
@@ -57,6 +56,3 @@ constexpr __Placeholder<20> _20;
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_PLACEHOLDERS_HPP

@@ -4,8 +4,7 @@
         Class __FunctionHelper header.
 */
 
-#ifndef __FUNCTION_FUNCTION_HELPER_H
-#define __FUNCTION_FUNCTION_HELPER_H
+#pragma once
 
 template <typename F>
 class __FunctionHelper: public __FunctionHelperBase
@@ -28,6 +27,3 @@ private:
 
     F __functionObj;
 };
-
-
-#endif  // __FUNCTION_FUNCTION_HELPER_H

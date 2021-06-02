@@ -4,8 +4,7 @@
         Class __FunctionHelper implementation.
 */
 
-#ifndef __FUNCTION_FUNCTION_HELPER_HPP
-#define __FUNCTION_FUNCTION_HELPER_HPP
+#pragma once
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
@@ -40,6 +39,3 @@ Function<Ret (Types...)>::__FunctionHelper<F>::__Copy() const
 {
     return new __FunctionHelper(__functionObj);
 }
-
-
-#endif  // __FUNCTION_FUNCTION_HELPER_HPP

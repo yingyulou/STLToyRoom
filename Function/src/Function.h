@@ -4,8 +4,7 @@
         Class Function header.
 */
 
-#ifndef __FUNCTION_FUNCTION_H
-#define __FUNCTION_FUNCTION_H
+#pragma once
 
 namespace Function_
 {
@@ -59,6 +58,3 @@ private:
 
 
 }  // End namespace Function_
-
-
-#endif  // __FUNCTION_FUNCTION_H

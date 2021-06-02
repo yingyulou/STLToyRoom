@@ -4,8 +4,7 @@
         Class Any implementation.
 */
 
-#ifndef __ANY_ANY_HPP
-#define __ANY_ANY_HPP
+#pragma once
 
 #include "Any.h"
 #include "AnyHelper.h"
@@ -80,6 +79,3 @@ Any::~Any()
 
 
 }  // End namespace Any_
-
-
-#endif  // __ANY_ANY_HPP

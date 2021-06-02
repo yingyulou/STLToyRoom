@@ -4,8 +4,7 @@
         Class TupleType header.
 */
 
-#ifndef __TUPLE_TUPLE_TYPE_H
-#define __TUPLE_TUPLE_TYPE_H
+#pragma once
 
 #include "Tuple.h"
 #include "RecursionPair/RecursionPairType.h"
@@ -29,6 +28,3 @@ struct TupleType<N, Tuple<Types...>>
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_TUPLE_TYPE_H

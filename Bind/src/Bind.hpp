@@ -4,8 +4,7 @@
         Function Bind implementation.
 */
 
-#ifndef __BIND_BIND_HPP
-#define __BIND_BIND_HPP
+#pragma once
 
 #include "BindHelper.h"
 
@@ -20,6 +19,3 @@ auto Bind(F bindFunction, const FormalParameterTypes &... formalParameters)
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_BIND_HPP

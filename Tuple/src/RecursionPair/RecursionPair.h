@@ -4,8 +4,7 @@
         Class __RecursionPair header.
 */
 
-#ifndef __TUPLE_RECURSION_PAIR_H
-#define __TUPLE_RECURSION_PAIR_H
+#pragma once
 
 namespace Tuple_
 {
@@ -50,6 +49,3 @@ public:
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_RECURSION_PAIR_H

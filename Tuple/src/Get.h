@@ -4,8 +4,7 @@
         Function Get header.
 */
 
-#ifndef __TUPLE_GET_H
-#define __TUPLE_GET_H
+#pragma once
 
 #include "Tuple.h"
 #include "TupleType.h"
@@ -33,6 +32,3 @@ inline const typename TupleType<N, Tuple<Types...>>::Type &Get(const Tuple<Types
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_GET_H

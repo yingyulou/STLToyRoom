@@ -4,8 +4,7 @@
         Class __FunctionHelperBase header.
 */
 
-#ifndef __FUNCTION_FUNCTION_HELPER_BASE_H
-#define __FUNCTION_FUNCTION_HELPER_BASE_H
+#pragma once
 
 class __FunctionHelperBase
 {
@@ -22,6 +21,3 @@ public:
     // Destructor
     virtual ~__FunctionHelperBase();
 };
-
-
-#endif  // __FUNCTION_FUNCTION_HELPER_BASE_H

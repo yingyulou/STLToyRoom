@@ -4,8 +4,7 @@
         Class Function implementation.
 */
 
-#ifndef __FUNCTION_FUNCTION_HPP
-#define __FUNCTION_FUNCTION_HPP
+#pragma once
 
 #include "Function.h"
 
@@ -102,6 +101,3 @@ Function<Ret (Types...)>::~Function()
 
 
 }  // End namespace Function_
-
-
-#endif  // __FUNCTION_FUNCTION_HPP

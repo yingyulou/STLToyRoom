@@ -4,8 +4,7 @@
         Class __RecursionPairValue header.
 */
 
-#ifndef __TUPLE_RECURSION_PAIR_VALUE_H
-#define __TUPLE_RECURSION_PAIR_VALUE_H
+#pragma once
 
 #include "RecursionPair.h"
 #include "RecursionPairType.h"
@@ -108,6 +107,3 @@ struct __RecursionPairValue<N, __RecursionPair<T1, __RecursionPair<T2, T3>>>
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_RECURSION_PAIR_VALUE_H

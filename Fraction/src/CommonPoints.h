@@ -4,8 +4,7 @@
         Class __CommonPoints header.
 */
 
-#ifndef __FRACTION_COMMON_POINTS_H
-#define __FRACTION_COMMON_POINTS_H
+#pragma once
 
 #include "LeastCommonMultiple.h"
 
@@ -25,6 +24,3 @@ struct __CommonPoints
 
 
 }  // End namespace Fraction_
-
-
-#endif  // __FRACTION_COMMON_POINTS_H

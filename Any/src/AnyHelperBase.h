@@ -4,8 +4,7 @@
         Class __AnyHelperBase header.
 */
 
-#ifndef __ANY_ANY_HELPER_BASE_H
-#define __ANY_ANY_HELPER_BASE_H
+#pragma once
 
 namespace Any_
 {
@@ -28,6 +27,3 @@ public:
 
 
 }  // End namespace Any_
-
-
-#endif  // __ANY_ANY_HELPER_BASE_H

@@ -4,8 +4,7 @@
         Class __IsPlaceholder implementation.
 */
 
-#ifndef __BIND_IS_PLACEHOLDER_HPP
-#define __BIND_IS_PLACEHOLDER_HPP
+#pragma once
 
 #include <cstddef>
 #include "Placeholders.hpp"
@@ -32,6 +31,3 @@ struct __IsPlaceholder<Placeholders::__Placeholder<N>>
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_IS_PLACEHOLDER_HPP

@@ -4,8 +4,7 @@
         Class Fraction header.
 */
 
-#ifndef __FRACTION_FRACTION_H
-#define __FRACTION_FRACTION_H
+#pragma once
 
 #include "GreatestCommonDivisor.h"
 
@@ -28,6 +27,3 @@ struct Fraction
 
 
 }  // End namespace Fraction_
-
-
-#endif  // __FRACTION_FRACTION_H

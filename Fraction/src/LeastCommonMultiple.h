@@ -4,8 +4,7 @@
         Class __LeastCommonMultiple header.
 */
 
-#ifndef __FRACTION_LEAST_COMMON_MULTIPLE_H
-#define __FRACTION_LEAST_COMMON_MULTIPLE_H
+#pragma once
 
 #include "GreatestCommonDivisor.h"
 
@@ -25,6 +24,3 @@ struct __LeastCommonMultiple
 
 
 }  // End namespace Fraction_
-
-
-#endif  // __FRACTION_LEAST_COMMON_MULTIPLE_H

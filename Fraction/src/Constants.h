@@ -4,8 +4,7 @@
         Constants define.
 */
 
-#ifndef __FRACTION_CONSTANTS_H
-#define __FRACTION_CONSTANTS_H
+#pragma once
 
 #include "Fraction.h"
 
@@ -39,6 +38,3 @@ typedef Fraction<1000000000000000000000000, 1> YOTTA;
 
 
 }  // // End namespace Fraction_
-
-
-#endif  // __FRACTION_CONSTANTS_H

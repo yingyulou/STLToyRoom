@@ -4,8 +4,7 @@
         Class __BindHelper header.
 */
 
-#ifndef __BIND_BIND_HELPER_H
-#define __BIND_BIND_HELPER_H
+#pragma once
 
 #include <cstddef>
 #include <tuple>
@@ -55,6 +54,3 @@ private:
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_BIND_HELPER_H

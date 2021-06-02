@@ -4,8 +4,7 @@
         Class __EnableIf implementation.
 */
 
-#ifndef __BIND_ENABLE_IF_HPP
-#define __BIND_ENABLE_IF_HPP
+#pragma once
 
 namespace Bind_
 {
@@ -26,6 +25,3 @@ struct __EnableIf<true, T>
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_ENABLE_IF_HPP

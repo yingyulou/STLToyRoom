@@ -4,8 +4,7 @@
         Class __IndexSequence implementation.
 */
 
-#ifndef __BIND_INDEX_SEQUENCE_HPP
-#define __BIND_INDEX_SEQUENCE_HPP
+#pragma once
 
 #include <cstdlib>
 
@@ -55,6 +54,3 @@ using __IndexSequenceFor = __MakeIndexSequence<sizeof...(Types)>;
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_INDEX_SEQUENCE_HPP

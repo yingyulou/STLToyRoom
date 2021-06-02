@@ -4,8 +4,7 @@
         Class __AnyHelper header.
 */
 
-#ifndef __ANY_ANY_HELPER_H
-#define __ANY_ANY_HELPER_H
+#pragma once
 
 #include "AnyHelperBase.h"
 
@@ -44,6 +43,3 @@ private:
 
 
 }  // End namespace Any_
-
-
-#endif  // __ANY_ANY_HELPER_H

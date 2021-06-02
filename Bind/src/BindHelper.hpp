@@ -4,8 +4,7 @@
         Class __BindHelper implementation.
 */
 
-#ifndef __BIND_BIND_HELPER_HPP
-#define __BIND_BIND_HELPER_HPP
+#pragma once
 
 #include <tuple>
 #include "BindHelper.h"
@@ -77,6 +76,3 @@ auto __BindHelper<F, FormalParameterTypes...>::__callHelper(
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_BIND_HELPER_HPP

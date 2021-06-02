@@ -4,8 +4,7 @@
         Fraction operators define.
 */
 
-#ifndef __FRACTION_OPERATOR_H
-#define __FRACTION_OPERATOR_H
+#pragma once
 
 #include "Fraction.h"
 #include "CommonPoints.h"
@@ -77,6 +76,3 @@ using FractionDivide = Fraction<
 
 
 }  // End namespace Fraction_
-
-
-#endif  // __FRACTION_OPERATOR_H

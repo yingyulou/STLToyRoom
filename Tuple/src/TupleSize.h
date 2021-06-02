@@ -4,8 +4,7 @@
         Class TupleSize header.
 */
 
-#ifndef __TUPLE_TUPLE_SIZE_H
-#define __TUPLE_TUPLE_SIZE_H
+#pragma once
 
 #include "Tuple.h"
 
@@ -28,6 +27,3 @@ struct TupleSize<Tuple<Types...>>
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_TUPLE_SIZE_H

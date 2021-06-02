@@ -4,8 +4,7 @@
         Class __GreatestCommonDivisor header.
 */
 
-#ifndef __FRACTION_GREATEST_COMMON_DIVISOR_H
-#define __FRACTION_GREATEST_COMMON_DIVISOR_H
+#pragma once
 
 namespace Fraction_
 {
@@ -29,6 +28,3 @@ struct __GreatestCommonDivisor<LHS, 0>
 
 
 }  // End namespace Fraction_
-
-
-#endif  // __FRACTION_GREATEST_COMMON_DIVISOR_H

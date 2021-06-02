@@ -4,8 +4,7 @@
         Class __AnyHelper implementation.
 */
 
-#ifndef __ANY_ANY_HELPER_HPP
-#define __ANY_ANY_HELPER_HPP
+#pragma once
 
 #include "AnyHelper.h"
 
@@ -32,6 +31,3 @@ __AnyHelper<T> *__AnyHelper<T>::__Copy() const
 
 
 }  // End namespace Any_
-
-
-#endif  // __ANY_ANY_HELPER_HPP

@@ -4,8 +4,7 @@
         Class __RecursionPair implementation.
 */
 
-#ifndef __TUPLE_RECURSION_PAIR_HPP
-#define __TUPLE_RECURSION_PAIR_HPP
+#pragma once
 
 #include "RecursionPair.h"
 
@@ -38,6 +37,3 @@ __RecursionPair<T1, void>::__RecursionPair(const T1 &first): __first(first) {}
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_RECURSION_PAIR_HPP

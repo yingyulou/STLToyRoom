@@ -4,8 +4,7 @@
         Class __ArgsHelper implementation.
 */
 
-#ifndef __BIND_ARGS_HELPER_HPP
-#define __BIND_ARGS_HELPER_HPP
+#pragma once
 
 #include "ArgsHelper.h"
 
@@ -25,6 +24,3 @@ __ArgsHelper<FormalParameterTupleType, ActualParameterTupleType>::__ArgsHelper(
 
 
 }  // End namespace Bind_
-
-
-#endif  // __BIND_ARGS_HELPER_HPP

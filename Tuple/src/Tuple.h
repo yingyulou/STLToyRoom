@@ -4,8 +4,7 @@
         Class Tuple header.
 */
 
-#ifndef __TUPLE_TUPLE_H
-#define __TUPLE_TUPLE_H
+#pragma once
 
 #include "RecursionPair/RecursionPair.hpp"
 
@@ -72,6 +71,3 @@ struct Tuple<T1, Types...>: __RecursionPair<T1, typename Tuple<Types...>::__Pair
 
 
 }  // End namespace Tuple_
-
-
-#endif  // __TUPLE_TUPLE_H
