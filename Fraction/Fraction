@@ -1,17 +1,7 @@
 /*
-DESCRIPTION
-
     Fraction
 
     The std::ratio implementation. For learning only.
-
-VERSION
-
-    1.0.0
-
 */
 
-#include "src/Fraction.h"
-#include "src/Operator.h"
-#include "src/Relationship.h"
-#include "src/Constants.h"
+#include "src/Fraction.hpp"

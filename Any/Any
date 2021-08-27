@@ -1,16 +1,7 @@
 /*
-DESCRIPTION
-
     Any
 
     The STL std::any implementation. For learning only.
-
-VERSION
-
-    1.0.0
-
 */
 
-#include "src/AnyHelperBase.hpp"
-#include "src/AnyHelper.hpp"
 #include "src/Any.hpp"

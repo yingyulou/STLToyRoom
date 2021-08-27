@@ -6,98 +6,88 @@
 
 #pragma once
 
-#include "Function.h"
-
 namespace Function_
 {
 
-////////////////////////////////////////////////////////////////////////////////
-// Constructor
-////////////////////////////////////////////////////////////////////////////////
-
-template <typename Ret, typename... Types>
-template <typename F>
-Function<Ret (Types...)>::Function(F functionObj):
-    __functionHelperBasePtr(new __FunctionHelper<F>(functionObj)) {}
-
-
-template <typename Ret, typename... Types>
-Function<Ret (Types...)>::Function(const Function &rhs):
-    __functionHelperBasePtr(rhs.__functionHelperBasePtr->__Copy) {}
-
-
-template <typename Ret, typename... Types>
-Function<Ret (Types...)>::Function(Function &&rhs):
-    __functionHelperBasePtr(rhs.__functionHelperBasePtr)
+namespace __detail
 {
-    rhs.__functionHelperBasePtr = nullptr;
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////
-// operator=
+// Class __FunctionHelperBase
 ////////////////////////////////////////////////////////////////////////////////
 
 template <typename Ret, typename... Types>
-Function<Ret (Types...)> &Function<Ret (Types...)>::operator=(const Function &rhs)
+class __FunctionHelperBase
 {
-    if (this != &rhs)
+public:
+
+    // operator()
+    virtual Ret operator()(const Types &... Args) = 0;
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Class __FunctionHelper
+////////////////////////////////////////////////////////////////////////////////
+
+template <typename F, typename Ret, typename... Types>
+class __FunctionHelper: public __FunctionHelperBase<Ret, Types...>
+{
+public:
+
+    // Constructor
+    explicit __FunctionHelper(F f):
+        __f(f) {}
+
+
+    // operator()
+    virtual Ret operator()(const Types &... Args)
     {
-        this->~Function();
-
-        __functionHelperBasePtr = rhs.__functionHelperBasePtr->__Copy();
+        return __f(Args...);
     }
 
-    return *this;
-}
+
+private:
+
+    // Attribute
+    F __f;
+};
+
+
+}  // End namespace __detail
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Class Function
+////////////////////////////////////////////////////////////////////////////////
+
+template <typename>
+class Function;
 
 
 template <typename Ret, typename... Types>
-Function<Ret (Types...)> &Function<Ret (Types...)>::operator=(Function &&rhs)
+class Function<Ret (Types...)>
 {
-    this->~Function();
+public:
 
-    __functionHelperBasePtr = rhs.__functionHelperBasePtr;
-    rhs.__functionHelperBasePtr = nullptr;
-
-    return *this;
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
-// operator()
-////////////////////////////////////////////////////////////////////////////////
-
-template <typename Ret, typename... Types>
-Ret Function<Ret (Types...)>::operator()(const Types &... Args)
-{
-    return (*__functionHelperBasePtr)(Args...);
-}
+    // Constructor
+    template <typename F>
+    explicit Function(F f):
+        __val(new __detail::__FunctionHelper<F, Ret, Types...>(f)) {}
 
 
-////////////////////////////////////////////////////////////////////////////////
-// Destructor
-////////////////////////////////////////////////////////////////////////////////
-
-template <typename Ret, typename... Types>
-Function<Ret (Types...)>::~Function()
-{
-    delete __functionHelperBasePtr;
-}
+    // operator()
+    Ret operator()(const Types &...Args)
+    {
+        return (*__val)(Args...);
+    }
 
 
-////////////////////////////////////////////////////////////////////////////////
-// Class __FunctionHelperBase implementation
-////////////////////////////////////////////////////////////////////////////////
+private:
 
-#include "FunctionHelperBase.hpp"
-
-
-////////////////////////////////////////////////////////////////////////////////
-// Class __FunctionHelper implementation
-////////////////////////////////////////////////////////////////////////////////
-
-#include "FunctionHelper.hpp"
+    // Attribute
+    __detail::__FunctionHelperBase<Ret, Types...> *__val;
+};
 
 
 }  // End namespace Function_

@@ -6,76 +6,90 @@
 
 #pragma once
 
-#include "Any.h"
-#include "AnyHelper.h"
-
 namespace Any_
 {
 
+namespace __detail
+{
+
 ////////////////////////////////////////////////////////////////////////////////
-// Constructor
+// Class __AnyHelperBase
+////////////////////////////////////////////////////////////////////////////////
+
+class __AnyHelperBase
+{
+public:
+
+    // Destructor
+    virtual ~__AnyHelperBase() = default;
+};
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Class __AnyHelperBase
 ////////////////////////////////////////////////////////////////////////////////
 
 template <typename T>
-Any::Any(const T &val): __anyHelperBasePtr(new __AnyHelper<T>(val)) {}
-
-
-Any::Any(const Any &rhs): __anyHelperBasePtr(rhs.__anyHelperBasePtr->__Copy()) {}
-
-
-Any::Any(Any &&rhs): __anyHelperBasePtr(rhs.__anyHelperBasePtr)
+class __AnyHelper: public __AnyHelperBase
 {
-    rhs.__anyHelperBasePtr = nullptr;
-}
+public:
+
+    // Constructor
+    explicit __AnyHelper(const T &val):
+        __val(val) {}
 
 
-////////////////////////////////////////////////////////////////////////////////
-// operator=
-////////////////////////////////////////////////////////////////////////////////
-
-template <typename T>
-Any &Any::operator=(const T &rhs)
-{
-    this->~Any();
-
-    __anyHelperBasePtr = new __AnyHelper<T>(rhs);
-
-    return *this;
-}
-
-
-Any &Any::operator=(const Any &rhs)
-{
-    if (this != &rhs)
+    // operator()
+    const T &operator()() const
     {
-        this->~Any();
-
-        __anyHelperBasePtr = rhs.__anyHelperBasePtr->__Copy();
+        return __val;
     }
 
-    return *this;
-}
+
+private:
+
+    // Attribute
+    T __val;
+};
 
 
-Any &Any::operator=(Any &&rhs)
-{
-    this->~Any();
-
-    __anyHelperBasePtr = rhs.__anyHelperBasePtr;
-    rhs.__anyHelperBasePtr = nullptr;
-
-    return *this;
-}
+}  // End namespace __detail
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Destructor
+// Class Any
 ////////////////////////////////////////////////////////////////////////////////
 
-Any::~Any()
+class Any
 {
-    delete __anyHelperBasePtr;
-}
+public:
+
+    // Constructor
+    template <typename T>
+    explicit Any(const T &val):
+        __val(new __detail::__AnyHelper<T>(val)) {}
+
+
+    // Get
+    template <typename T>
+    const T &get() const
+    {
+        return (*dynamic_cast<__detail::__AnyHelper<T> *>(__val))();
+    }
+
+
+    // Destructor
+    ~Any()
+    {
+        delete __val;
+    }
+
+
+private:
+
+    // Attribute
+    __detail::__AnyHelperBase *__val;
+};
 
 
 }  // End namespace Any_

@@ -15,7 +15,7 @@ All classes and functions are located under the namespace ```Function_```.
 ## Example
 
 ``` Cpp
-Function_::Function<int (int, int)> funcObj = [] (int lhs, int rhs) { return lhs + rhs; };
+Function_::Function<int (int, int)> funcObj([] (int lhs, int rhs) { return lhs + rhs; });
 
 cout << funcObj(1, 2);  // 3
 ```

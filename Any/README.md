@@ -15,15 +15,7 @@ All classes and functions are located under the namespace ```Any_```.
 ## Example
 
 ``` Cpp
-Any_::Any anyVal = 0;
+Any_::Any anyVal(0);
 
-cout << anyVal.AnyCast<int>() << endl;      // 0
-
-anyVal = 0.;
-
-cout << anyVal.AnyCast<double>() << endl;   // 0.
-
-anyVal = string("0");
-
-cout << anyVal.AnyCast<string>() << endl;   // "0"
+cout << anyVal.get<int>() << endl;  // 0
 ```
