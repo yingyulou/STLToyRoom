@@ -18,7 +18,7 @@ struct __RecursionPair
 {
 public:
 
-    // Attribute
+    // Data
     T1 __first;
     T2 __second;
 
@@ -38,7 +38,7 @@ struct __RecursionPair<T1, void>
 {
 public:
 
-    // Attribute
+    // Data
     T1 __first;
 
 
